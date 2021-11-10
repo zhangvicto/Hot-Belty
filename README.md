@@ -4,9 +4,9 @@ A high temperature conveyor belt low-cost open-source 3d-printer for printing en
 # Current Progress
 <img src="/img/xy_gantry_v1.png" alt="drawing" />
 XY Gantry Design V1 - incomplete
-<img src="/img/drawing1.png" alt="drawing" width="300"/>
-<img src="/img/drawing2.png" alt="drawing" width="300"/>
-<img src="/img/drawing3.png" alt="drawing" width="300"/>
+
+<img src="/img/drawing1.jpg" alt="drawing" width="300"/>
+<img src="/img/drawing2.jpg" alt="drawing" width="300"/>
 
 - [x] Insulation placement and method
 - [x] Find improvements from previous Design
