@@ -1,5 +1,5 @@
 # Hot Belty
-A high temperature conveyor belt 3d-printer. 
+A high temperature conveyor belt low-cost open-source 3d-printer for printing engineering plastics such as PEKK/PEEK/PEI. 
 
 # Current Progress
 <img src="/img/xy_gantry_v1.png" alt="drawing" />
