@@ -36,7 +36,7 @@ The Fysetc Spider will be used for this printer as it offers more than enough st
 2. Painters' tape on top of the belt
 
 ## Frame Parts
-Most parts will be 3d-printed using polycarboante or PETG. 
+Most parts will be 3d-printed using polycarbonate or PETG. 
 
 ---
 Special thanks to Dr. Pearce and the FAST Laboratory for their help.
