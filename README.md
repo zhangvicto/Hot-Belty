@@ -39,7 +39,7 @@ The Fysetc Spider will be used for this printer as it offers more than enough st
 Most parts will be 3d-printed using polycarbonate or PETG. 
 
 ## Open-Source Licenses
-<img src="/img/oshw_facts.png" alt="OS" width="400"/>
+<img src="/img/oshw_facts.png" alt="OS"/>
 
 ---
 Special thanks to Dr. Pearce and the FAST Laboratory for their help.
