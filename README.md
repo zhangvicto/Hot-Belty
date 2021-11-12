@@ -38,5 +38,8 @@ The Fysetc Spider will be used for this printer as it offers more than enough st
 ## Frame Parts
 Most parts will be 3d-printed using polycarbonate or PETG. 
 
+## Open-Source Licenses
+<img src="/img/oshwa_facts.png" alt="OS" width="400"/>
+
 ---
 Special thanks to Dr. Pearce and the FAST Laboratory for their help.
