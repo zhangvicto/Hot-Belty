@@ -2,7 +2,7 @@
 A high temperature conveyor belt low-cost open-source 3d-printer for printing engineering plastics such as PEKK/PEEK/PEI. 
 
 # Current Progress
-<img src="/img/xy_gantry_v1.png" alt="drawing" />
+<img src="/img/frame_v1.png" alt="drawing" />
 XY Gantry Design V1 - incomplete
 
 <img src="/img/drawing1.jpg" alt="drawing" width="400"/>
