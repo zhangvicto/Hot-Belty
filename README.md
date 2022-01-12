@@ -13,9 +13,11 @@ XY Gantry Design V1 - incomplete
 - [x] Material selection
 - [x] Belt Design
 - [ ] CAD design
-- [ ] Select enclosure heating element
+- [x] Select enclosure heating element
 - [ ] Software
-- [ ] Material purchasing
+- [ ] Material purchasing (80% complete)
+- [ ] Testing Enclosure Heating
+- [ ] Build
 
 # Printer Specification Goals
 ## 24V System
