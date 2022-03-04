@@ -2,7 +2,7 @@
 A high temperature conveyor belt low-cost open-source 3d-printer for printing engineering plastics such as PEKK/PEEK/PEI. 
 
 # Current Progress
-<img src="/img/frame_v1.png" alt="drawing" />
+<img src="/img/render.png" alt="drawing" />
 
 - [x] Insulation placement and method
 - [x] Find improvements from previous Design
