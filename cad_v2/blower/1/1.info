@@ -1,0 +1,81 @@
+
+    System Info
+                Status:   Solver is finished.
+                Product:   Flow Simulation 2020 3.0. Build: 4921
+                Computer name:   DESKTOP-DACR5AP
+                User name:   Victor Zhang
+                Processors:   AMD Ryzen 5 3600X 6-Core Processor             
+                Memory:   16333 MB / 7290 MB
+                Operating system:   Windows 10 (or higher) (Version 10.0.19044)
+                CAD version:   SOLIDWORKS 2020 SP3.0
+                CPU speed:   3800 MHz
+
+    General Info
+                Model:   blower.SLDASM
+                Project name:   Blower Sim
+                Project path:   C:\Users\Victor Zhang\Documents\GitHub\Hot-Belty\cad_v2\blower\1
+                Units system:   SI (m-kg-s)
+                Analysis type:   External (not exclude internal spaces)
+                Exclude cavities without flow conditions :   On
+                Coordinate system:   Global coordinate system
+                Reference axis:   X
+
+    Physical Features
+                Heat conduction in solids:   Off
+                Time dependent:   On
+                Gravitational effects:   Off
+                Flow type:   Laminar and turbulent
+                High Mach number flow:   Off
+                Humidity:   Off
+                Free surface:   Off
+                Default roughness:   0 micrometer
+
+            Default wall conditions
+                Heat transfer rate:   1.740 W
+
+    Computational Domain
+
+        Size
+                X min:   -0.225 m
+                X max:   0 m
+                Y min:   0.053 m
+                Y max:   0.324 m
+                Z min:   -0.404 m
+                Z max:   -0.237 m
+                X size:   0.225 m
+                Y size:   0.271 m
+                Z size:   0.168 m
+
+    Calculation Mesh
+
+        Basic Mesh Dimensions
+                Number of cells in X:   16
+                Number of cells in Y:   19
+                Number of cells in Z:   11
+
+        Number Of Cells
+                Cells:   9215
+                Fluid cells:   9215
+                Irregular cells:   0
+                Trimmed cells:   0
+                Maximum refinement level:   1
+
+    Goals
+                
+                Name   	Unit   	Value   	Progress   	Criteria   	Delta   	Use in convergence 
+
+    General Info
+                Run at:   DESKTOP-DACR5AP
+                Number of cores:   12
+                Iterations:   100
+                Physical time:   0.120 s
+                CPU time:   0 s
+
+        Log
+                Mesh generation started	0:   18:39:59 , Mar 04
+                Mesh generation normally finished	0:   18:40:00 , Mar 04
+                Preparing data for calculation	0:   18:40:00 , Mar 04
+                Calculation started	0:   18:40:00 , Mar 04
+                Calculation has converged since the following criteria are satisfied:	100:   18:40:26 , Mar 04
+                    Max. iteration is reached	100:   
+                Calculation finished	100:   18:40:26 , Mar 04

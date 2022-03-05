@@ -1,0 +1,7 @@
+2022-Mar-04 18:40:25
+Computer name:	DESKTOP-DACR5AP
+Number of cores used in calculation:	12
+Configuration name:	Default
+Project name:	Blower Sim
+
+Warnings on last iteration: 
