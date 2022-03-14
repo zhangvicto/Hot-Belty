@@ -1,5 +1,6 @@
+//-----------------------------------------------------------------------------------------//
 
-
+//THERM SETUP - B3950
 // resistance at 25 degrees C
 #define THERMISTORNOMINAL 100000
 // temp. for nominal resistance (almost always 25 C)
@@ -16,13 +17,24 @@ const int thermPin1 = A0;
 const int thermPin2 = A1;
 
 //TIMING
-const int delayTime = 2000;
+const int delayTime = 10000;
 int prevTime = 0;
+
+int bangCycleTime = 1000; //DEFAULT cycle time
+int bangPrevTime = 0;
+
+
 
 //HEATER
 const int heaterPin = 22;
 const int buttonPin = 30;
 int buttonState = 0;
+
+//BANG BANG
+const int goalTemp = 150;
+
+
+//-----------------------------------------------------------------------------------------//
 
 
 void setup(void) {
@@ -33,12 +45,14 @@ void setup(void) {
 }
 
 void loop(void) {
+  float temperature1;
+  float temperature2;
 
   int time_now = millis();
   if (time_now - prevTime > delayTime) {
 
-    float temperature1 = convert(takeSamples(thermPin1));
-    float temperature2 = convert(takeSamples(thermPin2));
+    temperature1 = convert(takeSamples(thermPin1));
+    temperature2 = convert(takeSamples(thermPin2));
 
     Serial.print("T1 ");
     Serial.print(temperature1);
@@ -48,14 +62,47 @@ void loop(void) {
     Serial.print("T2 ");
     Serial.print(temperature2);
     Serial.println(" C");
-    
+
     prevTime = time_now;
   }
+
+
+  //-----------------------------------------------------------------------------------------//
+
+  //BANG BANG CONTROL
+  int bangTimeNow = millis();
+  if ((bangTimeNow - bangPrevTime > bangCycleTime) && buttonState == 1) {
+
+    //TAKE AVERAGE TEMP
+
+    int currentTemp;
+    if (temperature1 > 0 && temperature2 > 0) {
+      currentTemp = (convert(takeSamples(thermPin1)) + convert(takeSamples(thermPin2))) / 2;
+      Serial.print(currentTemp);
+      Serial.println("C");
+    }
+
+    //HEAT UP IF TOO LOW
+    if (int(currentTemp) < goalTemp && goalTemp > 0) {
+      digitalWrite(heaterPin, HIGH);
+      Serial.println("Heating...");
+
+    } else { //OFF IF TOO HIGH
+      digitalWrite(heaterPin, LOW);
+      Serial.println("Cooling...");
+    }
+
+    bangPrevTime = bangTimeNow;
+  }
+
+
+  //-----------------------------------------------------------------------------------------//
+
 
   //BUTTON
   if (digitalRead(buttonPin) == LOW) {
     if (buttonState == 0) {
-      digitalWrite(heaterPin, HIGH);
+      //digitalWrite(heaterPin, HIGH);
       buttonState = 1;
       Serial.print("Heater ON");
     } else {
@@ -66,6 +113,10 @@ void loop(void) {
     delay(200);
   }
 }
+
+
+//-----------------------------------------------------------------------------------------//
+
 
 float takeSamples(int THERMISTORPIN) {
   uint8_t i;
