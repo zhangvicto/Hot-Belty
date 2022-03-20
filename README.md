@@ -3,15 +3,16 @@ A high temperature conveyor belt low-cost open-source 3d-printer for printing en
 
 # Current Progress
 <img src="/img/render.png" alt="drawing" />
+<img src="/img/motion.gif" alt="gif">
 
 - [x] Find improvements from previous Design
 - [x] Part Selection
 - [x] Belt Design
-- [ ] CAD design (80%)
-- [ ] Material purchasing (90%)
-- [ ] Testing Enclosure Heating
-- [ ] Building
-- [ ] Software Implentation
+- [ ] CAD design (95%)
+- [x] Material purchasing
+- [x] Testing Enclosure Heating
+- [ ] Building (10%)
+- [ ] Software Implementation (10%)
 - [ ] Troubleshooting and Tuning
 - [ ] Enclosure Extension Design
 
