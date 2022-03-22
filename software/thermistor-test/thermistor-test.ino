@@ -24,14 +24,16 @@ int bangCycleTime = 1000; //DEFAULT cycle time
 int bangPrevTime = 0;
 
 
-
 //HEATER
 const int heaterPin = 22;
 const int buttonPin = 30;
 int buttonState = 0;
 
+//MOTOR
+const int motorPin = 23;
+
 //BANG BANG
-const int goalTemp = 150;
+const int goalTemp = 50;
 
 
 //-----------------------------------------------------------------------------------------//
@@ -40,6 +42,10 @@ const int goalTemp = 150;
 void setup(void) {
   pinMode(heaterPin, OUTPUT);
   pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(motorPin, OUTPUT);
+  digitalWrite(motorPin, LOW);
+  digitalWrite(heaterPin, LOW);
+  
   Serial.begin(9600);
   analogReference(EXTERNAL);
 }
@@ -87,6 +93,12 @@ void loop(void) {
       digitalWrite(heaterPin, HIGH);
       Serial.println("Heating...");
 
+      if (goalTemp - currentTemp < 5) {
+        digitalWrite(motorPin, HIGH);
+      } else {
+        digitalWrite(motorPin, LOW);
+      }
+
     } else { //OFF IF TOO HIGH
       digitalWrite(heaterPin, LOW);
       Serial.println("Cooling...");
@@ -103,10 +115,12 @@ void loop(void) {
   if (digitalRead(buttonPin) == LOW) {
     if (buttonState == 0) {
       //digitalWrite(heaterPin, HIGH);
+      //digitalWrite(motorPin, HIGH);
       buttonState = 1;
       Serial.print("Heater ON");
     } else {
       digitalWrite(heaterPin, LOW);
+      digitalWrite(motorPin, LOW);
       buttonState = 0;
       Serial.print("Heater OFF");
     }
