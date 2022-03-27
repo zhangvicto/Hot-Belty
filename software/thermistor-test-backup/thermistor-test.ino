@@ -33,10 +33,7 @@ const int motorPin = 23;
 
 //BANG BANG
 const int goalTemp = 50;
-const int hysteresis = 4;
-int lastTemp = 0;
-int isRising = 0;
-int isDropping = 0;
+const int hysteresis = 4; 
 
 
 //-----------------------------------------------------------------------------------------//
@@ -48,7 +45,7 @@ void setup(void) {
   pinMode(motorPin, OUTPUT);
   digitalWrite(motorPin, LOW);
   digitalWrite(heaterPin, LOW);
-
+  
   Serial.begin(9600);
   analogReference(EXTERNAL);
 }
@@ -80,10 +77,8 @@ void loop(void) {
 
   //BANG BANG CONTROL
   int bangTimeNow = millis();
-  int bangCycleTime = 500; //DEFAULT cycle time
-  int maxTemp = goalTemp + hysteresis;
-  int minTemp = goalTemp - hysteresis;
-
+  int bangCycleTime = 1000; //DEFAULT cycle time
+  
   if ((bangTimeNow - bangPrevTime > bangCycleTime) && buttonState == 1) {
 
     //TAKE AVERAGE TEMP
@@ -95,19 +90,17 @@ void loop(void) {
       Serial.println("C");
     }
 
-    //Temp increasing or decreasing
-    if (currentTemp - lastTemp > 0) {
-      isRising = 1;
-    } else {
-      isDropping = 1;
-    }
-
-    lastTemp = currentTemp;
-
     //HEAT UP IF TOO LOW
     if (int(currentTemp) < goalTemp && goalTemp > 0) {
       digitalWrite(heaterPin, HIGH);
       Serial.println("Heating...");
+
+      if (goalTemp - currentTemp < 5) {
+        digitalWrite(motorPin, HIGH);
+      } else {
+        digitalWrite(motorPin, LOW);
+      }
+
     } else { //OFF IF TOO HIGH
       digitalWrite(heaterPin, LOW);
       Serial.println("Cooling...");
