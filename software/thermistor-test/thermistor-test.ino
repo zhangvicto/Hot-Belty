@@ -16,6 +16,8 @@
 const int thermPin1 = A0;
 const int thermPin2 = A1;
 
+
+
 //TIMING
 const int delayTime = 10000;
 int prevTime = 0;
@@ -23,16 +25,26 @@ int prevTime = 0;
 int bangPrevTime = 0;
 
 
+
+
 //HEATER
 const int heaterPin = 22;
 const int buttonPin = 30;
 int buttonState = 0;
 
+
+
 //MOTOR
-const int motorPin = 23;
+const int motorPWM = 10;
+const int motorIn1 = 23;
+const int motorIn2 = 24;
+int motorSpeed = 8;
+
+
+
 
 //BANG BANG
-const int goalTemp = 50;
+const int goalTemp = 80;
 const int hysteresis = 4;
 int lastTemp = 0;
 int isRising = 0;
@@ -43,11 +55,24 @@ int isDropping = 0;
 
 
 void setup(void) {
+  //heater
   pinMode(heaterPin, OUTPUT);
-  pinMode(buttonPin, INPUT_PULLUP);
-  pinMode(motorPin, OUTPUT);
-  digitalWrite(motorPin, LOW);
   digitalWrite(heaterPin, LOW);
+
+
+  //button
+  pinMode(buttonPin, INPUT_PULLUP);
+
+
+  //Motor - remember to ground power supply with arduino
+  pinMode(motorPWM, OUTPUT);
+  pinMode(motorIn1, OUTPUT);
+  pinMode(motorIn2, OUTPUT);
+  //stop motor
+  analogWrite(motorPWM, 0);
+  digitalWrite(motorIn1, LOW);
+  digitalWrite(motorIn2, LOW);
+
 
   Serial.begin(9600);
   analogReference(EXTERNAL);
@@ -56,6 +81,11 @@ void setup(void) {
 void loop(void) {
   float temperature1;
   float temperature2;
+
+  //motor start
+  digitalWrite(motorIn1, LOW);
+  digitalWrite(motorIn2, HIGH);
+  analogWrite(motorPWM, map(motorSpeed, 0, 100, 75, 255));
 
   int time_now = millis();
   if (time_now - prevTime > delayTime) {
@@ -124,12 +154,10 @@ void loop(void) {
   if (digitalRead(buttonPin) == LOW) {
     if (buttonState == 0) {
       //digitalWrite(heaterPin, HIGH);
-      //digitalWrite(motorPin, HIGH);
       buttonState = 1;
       Serial.print("Heater ON");
     } else {
       digitalWrite(heaterPin, LOW);
-      digitalWrite(motorPin, LOW);
       buttonState = 0;
       Serial.print("Heater OFF");
     }
