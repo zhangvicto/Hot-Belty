@@ -4,6 +4,7 @@ A high temperature conveyor belt low-cost open-source 3d-printer for printing en
 # Current Progress
 <img src="/img/render.png" alt="drawing" />
 <img src="/img/motion.gif" alt="gif">
+https://www.youtube.com/shorts/wCqyctF1fq8
 
 - [x] Find improvements from previous Design
 - [x] Part Selection
