@@ -1,3 +1,5 @@
+
+
 # Hot Belty
 A high temperature conveyor belt low-cost open-source 3d-printer for printing engineering plastics such as PEKK/PEEK/PEI. 
 
@@ -32,7 +34,7 @@ A bed temperature of 200C+ is absolutely needed for printing PEKK/PEEK/PEI, espe
 An off-the-shelf 3d-printer motherboard/controller will be used for this printer. Relays will be used to control the bed and enclosure as they are powered directly from mains. Limit switches will be used as end stops for the X and Y axes, the belt will have no end stop. 
 
 ## Design Methodology
-# Iterative & Simple
+## Iterative & Simple
 The goal of the design is to come close to a finalized machine as possible before actual fabrication. During this design phase, the parts will be designed at first to be minimally viable, then optimized in terms of appearance and weight. The optimization is either done through a combination between finite element analysis (FEA) and using design for manufacturing and assembly. 
 
 # Parts Fabrication 
